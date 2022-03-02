@@ -12,3 +12,6 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 if DATABASE_URL is None:
     raise Exception(f"Database URI is not defined with the DATABASE_URL environment variable") 
+
+# Fix for Heroku
+DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://')
