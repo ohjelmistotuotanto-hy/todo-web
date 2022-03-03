@@ -8,3 +8,6 @@ __pycache__
 *$py.class
 .env
 .env.test
+output.xml
+log.html
+report.html

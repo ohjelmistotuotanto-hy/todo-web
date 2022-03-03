@@ -30,9 +30,17 @@ Korvaa tietokannan nimi haluamallasi nimellä.
 
 Luo seuraavaksi projektin juurihakemistoon tiedosto `.env.test` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että yhteys muodostetaan testitietokantaan. Esimerkiksi jos sovelluksen URI on `postgresql://localhost/tododev`, on testitietokannan URL `postgresql://localhost/todotest`.
 
-Testit suoritetaan [pytestin](https://docs.pytest.org/) avulla. Testien suorituksessa käytettävät ympäristömuuttujat ladataan `.env.test`-tiedostosta [pytest.ini](pytest.ini)-tiedoston konfiguraation mukaisesti. Jokainen testiajo alustaa tietokannan uudelleen [src/tests/conftest.py](src/tests/conftest.py)-tiedoston mukaisesti.
+### Yksikkötestit
+
+Yksikkötestit suoritetaan [pytestin](https://docs.pytest.org/) avulla. Testit sijaitsevat [src/tests](src/tests)-hakemistossa. Testien suorituksessa käytettävät ympäristömuuttujat ladataan `.env.test`-tiedostosta [pytest.ini](pytest.ini)-tiedoston konfiguraation mukaisesti. Jokainen testiajo alustaa tietokannan uudelleen [src/tests/conftest.py](src/tests/conftest.py)-tiedoston mukaisesti.
 
 Testien suorittaminen onnistuu komennolla `poetry run pytest src`.
+
+### Hyväksymistestit
+
+Hyväksymistestit suoritetaan [Robot Frameworkin](https://robotframework.org/) avulla. Testit sijaitsevat [src/tests/robot](src/tests/robot)-hakemistossa.
+
+Käynnistä ensin Flask-palvelin yhdessä terminaali-ikkunassa komennolla `poetry run python3 src/run.py` ja tämän jälkeen voit suorittaa hyväksymistestit toisessa terminaalin ikkunassa komennolla `poetry run robot src/tests/robot`
 
 ## Tuotantoonvienti
 

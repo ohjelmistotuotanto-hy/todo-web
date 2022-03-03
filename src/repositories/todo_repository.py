@@ -11,9 +11,18 @@ class TodoRepository:
         db.session.commit()
 
         return todo
-    
+
     def delete_all(self):
-        return Todo.query.delete()
+        result = Todo.query.delete()
+        db.session.commit()
+
+        return result
+
+    def delete_by_id(self, todo_id):
+        result = Todo.query.filter(Todo.id == todo_id).delete()
+        db.session.commit()
+
+        return result
 
 
 todo_repository = TodoRepository()

@@ -12,5 +12,10 @@ class TodoService:
     def get_all_todos(self):
         return self._todo_repository.find_all()
 
+    def delete_todo(self, todo_id):
+        return self._todo_repository.delete_by_id(todo_id)
+
+    def delete_all_todos(self):
+        return self._todo_repository.delete_all()
 
 todo_service = TodoService()

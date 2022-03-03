@@ -1,1 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Todos
+{% endblock %}
+
+{% block body %}
 <h1>Todos</h1>
+
+{% if todos_count == 0 %}
+<p></p>No todos yet. Add a todo below.</p>
+{% endif %}
+
+<form action="/todos" method="POST">
+  <input type="text" placeholder="What needs to be done?" name="content" style="width: 300px;" required />
+  <button>Add todo</button>
+</form>
+
+{% if todos_count > 0 %}
+<ul>
+  {% for todo in todos %}
+  <li>
+      {{todo.content}}
+      <form action="/todos/delete/{{todo.id}}" method="POST" style="display: inline-block;">
+        <button>Delete</button>
+      </form>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
