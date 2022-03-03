@@ -40,7 +40,7 @@ Testien suorittaminen onnistuu komennolla `poetry run pytest src`.
 
 Hyväksymistestit suoritetaan [Robot Frameworkin](https://robotframework.org/) avulla. Testit sijaitsevat [src/tests/robot](src/tests/robot)-hakemistossa.
 
-Käynnistä ensin Flask-palvelin yhdessä terminaali-ikkunassa komennolla `poetry run python3 src/run.py` ja tämän jälkeen voit suorittaa hyväksymistestit toisessa terminaalin ikkunassa komennolla `poetry run robot src/tests/robot`
+Käynnistä ensin Flask-palvelin yhdessä terminaali-ikkunassa komennolla `poetry run python3 src/run.py` ja tämän jälkeen voit suorittaa hyväksymistestit toisessa terminaali-ikkunassa komennolla `poetry run robot src/tests/robot`.
 
 ## Tuotantoonvienti
 

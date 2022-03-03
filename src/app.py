@@ -5,6 +5,8 @@ from controllers.todo_controller import todo_controller
 from controllers.test_controller import test_controller
 from controllers.ping_controller import ping_controller
 
+print(DATABASE_URL)
+
 def create_app():
     app = Flask(__name__)
 
