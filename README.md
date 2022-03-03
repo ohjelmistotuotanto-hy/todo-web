@@ -8,13 +8,13 @@
 
 1. Asenna PostgreSQL. Tässä voit hyödyntää esimerkiksi Tietokantasovellus-kurssin [ohjetta](https://hy-tsoha.github.io/materiaali/osa-2/#tietokannan-k%C3%A4ytt%C3%A4minen), tai PostgreSQL:n oman dokumentaation [ohjetta](https://www.postgresql.org/download/).
 1. Asenna riippuvuudet komennolla `poetry install`
-1. Luo projektin juurihakemistoon tiedosto `.env` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että se on muotoa `DATABASE_URL=postgresql://...`. Kokeile ennen tätä, että yhteyden muodostus onnistuu komentoriviltä komennolla `psql <url>`, jossa `<url>` on tietokantayhteyden URL.
+1. Luo projektin juurihakemistoon tiedosto `.env` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että se on muotoa `DATABASE_URL=postgresql://...`. Kokeile ennen tätä, että yhteyden muodostus onnistuu terminaalissa komennolla `psql <url>`, jossa `<url>` on tietokantayhteyden URL.
 1. Alusta tietokanta komennolla `poetry run python3 src/initialize_database.py`.
 1. Käynnistä sovellus komennolla `poetry run python3 src/run.py`
 
-## Tietokannan skeeman ylläpitäminen
+## Tietokantaskeeman ylläpitäminen
 
-Tietokannan taulut alustetaan [src/initialize_database.py](src/initialize_database.py)-tiedostossa. Jos haluat tehdä muutoksia tietokannan skeemaan, tee muutokset tähän tiedostoon ja suorita muutosten jälkeen komento `poetry run python3 src/initialize_database.py`.
+Tietokannan taulut alustetaan [src/initialize_database.py](src/initialize_database.py)-tiedostossa. Jos haluat tehdä muutoksia tietokantaskeemaan, tee muutokset kyseisessä tiedostossa ja suorita muutosten jälkeen komento `poetry run python3 src/initialize_database.py`.
 
 Huomaa, että SQL-tietokannan skeemaa ylläpidetään yleensä [tietokantamigraatioiden](https://en.wikipedia.org/wiki/Schema_migration) avulla. Tähän sopiva kirjasto on esimerkiksi [Alembic](https://alembic.sqlalchemy.org/en/latest/).
 
