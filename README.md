@@ -8,7 +8,7 @@
 
 1. Asenna PostgreSQL. Tässä voit hyödyntää esimerkiksi Tietokantasovellus-kurssin [ohjetta](https://hy-tsoha.github.io/materiaali/osa-2/#tietokannan-k%C3%A4ytt%C3%A4minen), tai PostgreSQL:n oman dokumentaation [ohjetta](https://www.postgresql.org/download/).
 1. Asenna riippuvuudet komennolla `poetry install`
-1. Luo projektin juurihakemistoon tiedosto `.env` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että se on muotoa `DATABASE_URL=postgres://...`. Kokeile ennen tätä, että yhteyden muodostus onnistuu komentoriviltä komennolla `psql <url>`, jossa `<url>` on tietokantayhteyden URL.
+1. Luo projektin juurihakemistoon tiedosto `.env` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että se on muotoa `DATABASE_URL=postgresql://...`. Kokeile ennen tätä, että yhteyden muodostus onnistuu komentoriviltä komennolla `psql <url>`, jossa `<url>` on tietokantayhteyden URL.
 1. Alusta tietokanta komennolla `poetry run python3 src/initialize_database.py`.
 1. Käynnistä sovellus komennolla `poetry run python3 src/run.py`
 
