@@ -1,5 +1,7 @@
 # todo-web
 
+[![Build](https://github.com/ohjelmistotuotanto-hy/todo-web/actions/workflows/build.yml/badge.svg)](https://github.com/ohjelmistotuotanto-hy/todo-web/actions/workflows/build.yml)
+
 [Ohjelmistotuotanto-kurssin](https://ohjelmistotuotanto-hy.github.io/) esimerkkiprojekti web-pohjaiselle Python-sovellukselle. Projektin web-palvelin on toteutettu [Flask](https://flask.palletsprojects.com/en/2.0.x/)-kirjaston avulla. Tietokantana on [PostgreSQL](https://www.postgresql.org/), jota käytetään [SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)-kirjaston avulla.
 
 ## Asennus
