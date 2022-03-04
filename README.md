@@ -8,8 +8,8 @@
 
 1. Asenna PostgreSQL. Tässä voit hyödyntää esimerkiksi Tietokantasovellus-kurssin [ohjetta](https://hy-tsoha.github.io/materiaali/osa-2/#tietokannan-k%C3%A4ytt%C3%A4minen), tai PostgreSQL:n oman dokumentaation [ohjetta](https://www.postgresql.org/download/).
 1. Asenna riippuvuudet komennolla `poetry install`
-1. Luo projektin juurihakemistoon tiedosto `.env` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että se on muotoa `DATABASE_URL=postgresql://...`. Kokeile ennen tätä, että yhteyden muodostus onnistuu terminaalissa komennolla `psql <url>`, jossa `<url>` on tietokantayhteyden URL.
-1. Alusta tietokanta komennolla `poetry run python3 src/initialize_database.py`.
+1. Luo projektin juurihakemistoon tiedosto `.env` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että se on muotoa `DATABASE_URL=postgresql://...`. Kokeile ennen tätä, että yhteyden muodostus onnistuu terminaalissa komennolla `psql <url>`, jossa `<url>` on tietokantayhteyden URL
+1. Alusta tietokanta komennolla `poetry run python3 src/initialize_database.py`
 1. Käynnistä sovellus komennolla `poetry run python3 src/run.py`
 
 ## Tietokantaskeeman ylläpitäminen
@@ -20,7 +20,7 @@ Huomaa, että SQL-tietokannan skeemaa ylläpidetään yleensä [tietokantamigraa
 
 ## Testaaminen
 
-Testejä varten kannattaa luoda oma tietokanta. Ota yhteys tietokantaan `psql`-komennon avulla ja suorita siellä seuraava komento:
+Testejä varten kannattaa luoda oma tietokanta, koska testien suorittaminen alustaa tietokannan uudelleen. Ota yhteys tietokantaan `psql`-komennon avulla ja suorita siellä seuraava komento:
 
 ```sql
 CREATE DATABASE todotest
@@ -28,7 +28,7 @@ CREATE DATABASE todotest
 
 Korvaa tietokannan nimi haluamallasi nimellä.
 
-Luo seuraavaksi projektin juurihakemistoon tiedosto `.env.test` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että yhteys muodostetaan testitietokantaan. Esimerkiksi jos sovelluksen URI on `postgresql://localhost/tododev`, on testitietokannan URL `postgresql://localhost/todotest`.
+Luo seuraavaksi projektin juurihakemistoon tiedosto `.env.test` ja kopioi siihen `.env.template`-tiedoston sisältö. Aseta `DATABASE_URL`-ympäristömuuttujan arvo siten, että yhteys muodostetaan testitietokantaan. Esimerkiksi, jos kehitystietokannan URL on `postgresql://localhost/tododev`, on testitietokannan URL `postgresql://localhost/todotest`.
 
 ### Yksikkötestit
 
