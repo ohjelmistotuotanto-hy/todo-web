@@ -44,8 +44,7 @@ Käynnistä ensin Flask-palvelin yhdessä terminaali-ikkunassa komennolla `poetr
 
 ## Tuotantoonvienti
 
-Luo sovellusta varten [Heroku](https://dashboard.heroku.com/)-sovellus komennolla `heroku apps:create ohtu-todo-web` (korvaa sovelluksen nimi haluamallasi nimellä). Ota tämän jälkeen tuotantoympäristön tietokantaa varteen käyttöön [Herokun PostgreSQL-tietokanta](https://elements.heroku.com/addons/heroku-postgresql) komennolla `heroku addons:create heroku-postgresql`. Herokun pitäisi asettaa ympäristömuuttujan `DATABASE_URL` arvo Heroku-sovelluksessa oikein. Tarkista tämä vielä komennolla `heroku config`.
-
+You are on your own... good luck!
 Ennen tuotantoonvientiä Herokuun, tulee `requirements.txt`-tiedosto muodostaa riippuvuuksien perusteella. Tämä onnistuu komennolla `poetry export -f requirements.txt --output requirements.txt`.
 
 Huomaa, että **jokainen tuotantoonvienti alustaa tietokannan uudelleen**, jotta tuotantotietokannan skeema olisi aina ajantasalla. Jos tämä ei ole toivottua, poista [tämä](Procfile#L1) rivi `Procfile`-tiedostosta.
